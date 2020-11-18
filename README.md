@@ -5,7 +5,7 @@
 
 ### ✨ [Demo](https://mosaif00.github.io/BookMarker-App/)
 
-![alt text](screen1.gif) ![alt text](screen2.gif)
+![alt text](screen1.png) ![alt text](screen2.gif)
 
 **Built With :**
   - HTML
