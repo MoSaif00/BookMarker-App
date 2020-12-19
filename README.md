@@ -25,7 +25,7 @@
 ## Issues
 
 ```sh
-all issues are fixed
+Delete Button in the BookMarker List need to be fixed  -  already fixed
 ```
 
 ## Author
