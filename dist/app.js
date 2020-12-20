@@ -2,13 +2,13 @@ const formElement = document.getElementById('form');
 formElement.addEventListener('submit', memorizeMarkers);
 
 function memorizeMarkers(x) {
-  let websiteName = document.getElementById('website-name').value;
-  let websiteURL = document.getElementById('website-url').value;
-  let errorMessage = document.getElementById('error-message');
+  const websiteName = document.getElementById('website-name').value;
+  const websiteURL = document.getElementById('website-url').value;
+  const errorMessage = document.getElementById('error-message');
   x.preventDefault();
   if (!websiteURL && !websiteName) {
     errorMessage.innerHTML = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>OH SORRY</strong> You have not entered the website name and URL.
+     <strong>OH SORRY</strong> You have not entered the website name and URL.
   </div>`;
     return false;
   } else if (!websiteName) {
@@ -38,9 +38,9 @@ function memorizeMarkers(x) {
     const myJSON = JSON.stringify(sitemarker);
     localStorage.setItem('storage', myJSON);
   } else {
-    let get = JSON.parse(localStorage.getItem('storage'));
+    const get = JSON.parse(localStorage.getItem('storage'));
     get.push(markers);
-    let myJSON = JSON.stringify(get);
+    const myJSON = JSON.stringify(get);
     localStorage.setItem('storage', myJSON);
   }
   displayMarkerList();
@@ -49,8 +49,8 @@ function memorizeMarkers(x) {
 }
 
 function displayMarkerList() {
-  let get = JSON.parse(localStorage.getItem('storage'));
-  let resultOfTheList = document.getElementById('websites-list');
+  const get = JSON.parse(localStorage.getItem('storage'));
+  const resultOfTheList = document.getElementById('websites-list');
   resultOfTheList.innerHTML = '';
   for (let i = 0; i < get.length; i++) {
     resultOfTheList.innerHTML +=
@@ -68,13 +68,13 @@ function displayMarkerList() {
 // displayMarkerList();
 
 function deleteTheMarker(element) {
-  let get = JSON.parse(localStorage.getItem('storage'));
+  const get = JSON.parse(localStorage.getItem('storage'));
   for (let i = 0; i < get.length; i++) {
     if (get[i].SiteName === element) {
       get.splice(i, 1);
     }
   }
-  let myJSON = JSON.stringify(get);
+  const myJSON = JSON.stringify(get);
   localStorage.setItem('storage', myJSON);
   displayMarkerList();
 }
